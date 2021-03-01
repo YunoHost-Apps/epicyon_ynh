@@ -129,7 +129,7 @@ ynh_add_systemd_config --service="$app" --template="systemd.service" --others_va
 
 # Set permissions on app files
 chown -R $app: $final_path
-chown -R $app: $path_url
+chown -R $app: $public_path
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST

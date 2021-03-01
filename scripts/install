@@ -141,7 +141,7 @@ python3 $final_path/epicyon.py --addaccount $email --password $password
 
 # Set permissions to app files
 chown -R $app: $final_path
-chown -R $app: $path_url
+chown -R $app: $public_path
 
 #=================================================
 # SETUP SSOWAT
