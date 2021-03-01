@@ -1,5 +1,5 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://gitlab.com/bashrc2/epicyon/-/archive/18088169e682c05cba03349e01e759981396222f/epicyon-18088169e682c05cba03349e01e759981396222f.tar.gz
+SOURCE_SUM=9deaf12d50bc616150f404ed8c7412fb72b38d88cd1def6d8a39aa15f48f8ce3
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
