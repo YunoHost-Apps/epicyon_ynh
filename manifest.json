@@ -7,7 +7,7 @@
     },
     "version": "1.03.2021~ynh1",
     "url": "https://epicyon.net/",
-    "license": "AGPL-3.0",
+    "license": "AGPL-1.0-or-later",
     "maintainer": {
         "name": "anmol"
     },
