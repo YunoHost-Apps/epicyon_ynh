@@ -1,0 +1,14 @@
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+WorkingDirectory=__FINALPATH__/
+ExecStart=/usr/bin/python3 __FINALPATH__/epicyon.py --port 443 --proxy __PORT__ --domain __DOMAIN__ --registration close --debug
+Environment=USER=__APP__
+Environment=PYTHONUNBUFFERED=true
+Restart=always
+StandardError=/var/log/__APP__/__APP__.log
+CPUQuota=80%
+
+[Install]
+WantedBy=multi-user.target
