@@ -118,7 +118,7 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Upgrading systemd configuration..."  --weight=1
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_add_systemd_config --service="$app" --template="systemd.service" --others_var="port domain"
 
 
 #=================================================
@@ -129,6 +129,7 @@ ynh_add_systemd_config
 
 # Set permissions on app files
 chown -R $app: $final_path
+chown -R $app: $public_path
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST

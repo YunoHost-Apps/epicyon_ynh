@@ -107,7 +107,7 @@ ynh_system_user_create --username=$app
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_add_systemd_config
+ynh_add_systemd_config --service="$app" --template="systemd.service" --others_var="port domain"
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
@@ -141,6 +141,7 @@ python3 $final_path/epicyon.py --addaccount $email --password $password
 
 # Set permissions to app files
 chown -R $app: $final_path
+chown -R $app: $public_path
 
 #=================================================
 # SETUP SSOWAT
