@@ -146,6 +146,15 @@ ynh_script_progression --message="Starting a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
+# SETUP SSOWAT
+#=================================================
+ynh_script_progression --message="Configuring permissions..."  --weight=1
+
+ynh_permission_update --permission="main" --add="visitors"
+
+ynh_permission_url --permission="main" --auth_header="false"
+
+#=================================================
 # RELOAD NGINX
 #=================================================
 ynh_script_progression --message="Reloading NGINX web server..."  --weight=1
