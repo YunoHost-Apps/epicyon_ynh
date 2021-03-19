@@ -131,7 +131,7 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$ap
 
 # Create admin
 ynh_script_progression --message="Create admin user"   --weight=1
-python3 $final_path/epicyon.py --addaccount $email --password $password
+python3 $final_path/epicyon.py --addaccount $admin --password $password --domain $domain
 
 #=================================================
 # GENERIC FINALIZATION
@@ -150,6 +150,7 @@ ynh_script_progression --message="Configuring permissions..."  --weight=1
 
 ynh_permission_update --permission="main" --add="visitors"
 
+ynh_permission_url --permission="main" --auth_header="false"
 
 #=================================================
 # RELOAD NGINX

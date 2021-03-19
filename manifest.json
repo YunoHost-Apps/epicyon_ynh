@@ -9,7 +9,7 @@
     "url": "https://epicyon.net/",
     "license": "AGPL-1.0-or-later",
     "maintainer": {
-        "name": "anmol"
+        "name": "Anmol Sharma"
     },
     "requirements": {
         "yunohost": ">= 4.1.3"
