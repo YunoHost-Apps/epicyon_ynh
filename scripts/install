@@ -95,10 +95,7 @@ mkdir $public_path
 mkdir -p $final_path/accounts/newsmirror
 ln -s $final_path/accounts/newsmirror $public_path/newsmirror
 
-chmod 750 "$final_path"
 chown -R $app: "$final_path"
-
-chmod 750 $public_path
 chown -R $app: $public_path
 
 #=================================================
