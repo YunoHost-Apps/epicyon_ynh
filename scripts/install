@@ -95,8 +95,14 @@ mkdir $public_path
 mkdir -p $final_path/accounts/newsmirror
 ln -s $final_path/accounts/newsmirror $public_path/newsmirror
 
-chown -R $app: "$final_path"
-chown -R $app: $public_path
+
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
+chmod 750 $public_path
+chmod -R o-rwx $public_path
+chown -R $app:www-data $public_path
 
 #=================================================
 # NGINX CONFIGURATION
