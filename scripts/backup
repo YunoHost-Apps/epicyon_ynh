@@ -50,7 +50,6 @@ ynh_backup --src_path="$public_path"
 
 ynh_backup --src_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 
-
 #=================================================
 # BACKUP SYSTEMD
 #=================================================

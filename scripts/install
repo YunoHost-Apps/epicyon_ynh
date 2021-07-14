@@ -35,9 +35,7 @@ app=$YNH_APP_INSTANCE_NAME
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
-
-ynh_script_progression --message="Validating installation parameters..."  --weight=1
-
+ynh_script_progression --message="Validating installation parameters..." --weight=1
 
 final_path=/opt/yunohost/$app
 public_path=/var/www/$app
@@ -50,7 +48,7 @@ ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
-ynh_script_progression --message="Storing installation settings..."  --weight=1
+ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
@@ -61,7 +59,7 @@ ynh_app_setting_set --app=$app --key=admin --value=$admin
 #=================================================
 # FIND AND OPEN A PORT
 #=================================================
-ynh_script_progression --message="Finding an available port..."  --weight=1
+ynh_script_progression --message="Finding an available port..." --weight=1
 
 # Find an available port
 port=$(ynh_find_port --port=7156)
@@ -70,9 +68,17 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..."  --weight=1
+ynh_script_progression --message="Installing dependencies..." --weight=1
 
 ynh_install_app_dependencies $pkg_dependencies
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -81,11 +87,22 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 ynh_app_setting_set --app=$app --key=public_path --value=$public_path
+
 # Clone repo, create public path and link accounts
 git clone https://gitlab.com/bashrc2/epicyon $final_path
+
 mkdir $public_path
 mkdir -p $final_path/accounts/newsmirror
 ln -s $final_path/accounts/newsmirror $public_path/newsmirror
+
+
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
+chmod 750 $public_path
+chmod -R o-rwx $public_path
+chown -R $app:www-data $public_path
 
 #=================================================
 # NGINX CONFIGURATION
@@ -95,58 +112,39 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=1
 ynh_add_nginx_config
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Configuring system user..." --weight=1
-
-# Create a system user
-ynh_system_user_create --username=$app
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_add_systemd_config --service="$app" --template="systemd.service" --others_var="port domain"
+ynh_add_systemd_config
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."  --weight=1
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
-yunohost service add $app --description="ActivityPub compliant server " --log="/var/log/$app/$app.log"
+yunohost service add $app --description="Federated social network server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..."  --weight=1
+ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
-
 #=================================================
 # SPECIFIC SETUP
 #=================================================
+ynh_script_progression --message="Create admin user" --weight=1
 
 # Create admin
-ynh_script_progression --message="Create admin user"   --weight=1
-python3 $final_path/epicyon.py --addaccount $admin --password $password --domain $domain
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions to app files
-chown -R $app: $final_path
-chown -R $app: $public_path
+python3 $final_path/epicyon.py --addaccount=$admin --password=$password --domain=$domain
 
 #=================================================
 # SETUP SSOWAT
 #=================================================
-ynh_script_progression --message="Configuring permissions..."  --weight=1
+ynh_script_progression --message="Configuring permissions..." --weight=1
 
 ynh_permission_update --permission="main" --add="visitors"
 
@@ -155,7 +153,7 @@ ynh_permission_url --permission="main" --auth_header="false"
 #=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading NGINX web server..."  --weight=1
+ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
 

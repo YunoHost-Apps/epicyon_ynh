@@ -47,9 +47,17 @@ ynh_abort_if_errors
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..."  --weight=1
+ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
 ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
+
+# Create a dedicated user (if not existing)
+ynh_system_user_create --username=$app --home_dir="$final_path"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -65,10 +73,15 @@ then
 	popd
 fi
 
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+chown -R $app: $public_path
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..."  --weight=1
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -76,44 +89,24 @@ ynh_add_nginx_config
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Upgrading dependencies..."  --weight=1
+ynh_script_progression --message="Upgrading dependencies..." --weight=1
 
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app
-
-
-#=================================================
 # SETUP SYSTEMD
 #=================================================
-ynh_script_progression --message="Upgrading systemd configuration..."  --weight=1
+ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
 
 # Create a dedicated systemd config
-ynh_add_systemd_config --service="$app" --template="systemd.service" --others_var="port domain"
-
-
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# SECURE FILES AND DIRECTORIES
-#=================================================
-
-# Set permissions on app files
-chown -R $app: $final_path
-chown -R $app: $public_path
+ynh_add_systemd_config
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."  --weight=1
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
 
-yunohost service add $app --description="A short description of the app" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="Federated social network server" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -123,18 +116,9 @@ ynh_script_progression --message="Starting a systemd service..." --weight=1
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
-# SETUP SSOWAT
-#=================================================
-ynh_script_progression --message="Configuring permissions..."  --weight=1
-
-ynh_permission_update --permission="main" --add="visitors"
-
-ynh_permission_url --permission="main" --auth_header="false"
-
-#=================================================
 # RELOAD NGINX
 #=================================================
-ynh_script_progression --message="Reloading NGINX web server..."  --weight=1
+ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
 
@@ -142,4 +126,4 @@ ynh_systemd_action --service_name=nginx --action=reload
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed"  --last
+ynh_script_progression --message="Upgrade of $app completed" --last
