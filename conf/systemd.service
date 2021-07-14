@@ -1,3 +1,7 @@
+[Unit]
+Description=Epicyon: Federated social network server
+After=network.target
+
 [Service]
 Type=simple
 User=__APP__
