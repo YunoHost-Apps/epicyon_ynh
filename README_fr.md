@@ -1,12 +1,12 @@
-# epicyon pour YunoHost
+# Epicyon pour YunoHost
 
 [![Niveau d'intégration](https://dash.yunohost.org/integration/epicyon.svg)](https://dash.yunohost.org/appci/app/epicyon) ![](https://ci-apps.yunohost.org/ci/badges/epicyon.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/epicyon.maintain.svg)  
-[![Installer epicyon avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=epicyon)
+[![Installer Epicyon avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=epicyon)
 
 *[Read this readme in english.](./README.md)*
 *[Lire ce readme en français.](./README_fr.md)*
 
-> *Ce package vous permet d'installer epicyon rapidement et simplement sur un serveur YunoHost.
+> *Ce package vous permet d'installer Epicyon rapidement et simplement sur un serveur YunoHost.
 Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
 
 ## Vue d'ensemble
@@ -24,7 +24,7 @@ Serveur de réseau social fédéré
 ## Documentations et ressources
 
 * Site officiel de l'app : https://epicyon.net
-* Dépôt de code officiel de l'app : hhttps://gitlab.com/bashrc2/epicyon/
+* Dépôt de code officiel de l'app : https://gitlab.com/bashrc2/epicyon/
 * Documentation YunoHost pour cette app : https://yunohost.org/app_epicyon
 * Signaler un bug : https://github.com/YunoHost-Apps/epicyon_ynh/issues
 
