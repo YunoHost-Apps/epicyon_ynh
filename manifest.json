@@ -1,5 +1,5 @@
 {
-    "name": "epicyon",
+    "name": "Epicyon",
     "id": "epicyon",
     "packaging_format": 1,
     "description": {
@@ -11,7 +11,7 @@
     "upstream": {
         "license": "AGPL-1.0-or-later",
         "website": "https://epicyon.net",
-        "code": "hhttps://gitlab.com/bashrc2/epicyon/"
+        "code": "https://gitlab.com/bashrc2/epicyon/"
     },
     "license": "AGPL-1.0-or-later",
     "maintainer": {
@@ -28,18 +28,15 @@
         "install" : [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "example.com"
+                "type": "domain"
             },
             {
                 "name": "admin",
-                "type": "user",
-                "example": "johndoe"
+                "type": "user"
             },
             {
                 "name": "password",
-                "type": "password",
-                "example": "Choose a password"
+                "type": "password"
             }
         ]
     }
