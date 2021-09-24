@@ -6,7 +6,7 @@
         "en": "Federated social network server",
         "fr": "Serveur de réseau social fédéré"
     },
-    "version": "1.03.2021~ynh2",
+    "version": "23.10.2021~ynh1",
     "url": "https://epicyon.net/",
     "upstream": {
         "license": "AGPL-1.0-or-later",
