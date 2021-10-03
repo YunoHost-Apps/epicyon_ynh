@@ -89,7 +89,7 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 ynh_app_setting_set --app=$app --key=public_path --value=$public_path
 
 # Clone repo, create public path and link accounts
-git clone https://gitlab.com/bashrc2/epicyon $final_path
+git clone https://gitlab.com/bashrc2/epicyon $final_path --quiet
 
 mkdir $public_path
 mkdir -p $final_path/accounts/newsmirror

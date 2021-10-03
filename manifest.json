@@ -1,17 +1,17 @@
 {
-    "name": "epicyon",
+    "name": "Epicyon",
     "id": "epicyon",
     "packaging_format": 1,
     "description": {
         "en": "Federated social network server",
         "fr": "Serveur de réseau social fédéré"
     },
-    "version": "1.03.2021~ynh2",
+    "version": "23.10.2021~ynh1",
     "url": "https://epicyon.net/",
     "upstream": {
         "license": "AGPL-1.0-or-later",
         "website": "https://epicyon.net",
-        "code": "hhttps://gitlab.com/bashrc2/epicyon/"
+        "code": "https://gitlab.com/bashrc2/epicyon/"
     },
     "license": "AGPL-1.0-or-later",
     "maintainer": {
@@ -28,18 +28,15 @@
         "install" : [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "example.com"
+                "type": "domain"
             },
             {
                 "name": "admin",
-                "type": "user",
-                "example": "johndoe"
+                "type": "user"
             },
             {
                 "name": "password",
-                "type": "password",
-                "example": "Choose a password"
+                "type": "password"
             }
         ]
     }

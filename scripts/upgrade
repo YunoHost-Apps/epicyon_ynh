@@ -69,7 +69,7 @@ then
 
 	# Pull the latest sorce
 	pushd "$final_path"
-		git pull
+		git pull --quiet
 	popd
 fi
 
