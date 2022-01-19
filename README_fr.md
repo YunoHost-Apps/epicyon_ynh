@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Serveur de réseau social fédéré
 
-**Version incluse :** 23.10.2021~ynh1
+**Version incluse :** 20.01.2022~ynh1
 
 
 
