@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Federated social network server
 
-**Shipped version:** 23.10.2021~ynh1
+**Shipped version:** 19.01.2022~ynh1
 
 
 
