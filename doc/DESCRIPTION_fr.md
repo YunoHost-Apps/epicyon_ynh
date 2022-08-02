@@ -1,0 +1,1 @@
+Serveur ActivityPub mettant en œuvre les protocoles S2S et C2S, adapté aux ordinateurs monocartes. Comprend des fonctionnalités telles que des outils de modération, l'expiration des messages, des avertissements sur le contenu et des descriptions d'images.
