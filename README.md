@@ -15,9 +15,10 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Federated social network server
+ActivityPub server implementing S2S and C2S protocols, suitable for single board computers. Includes features such as moderation tools, post expiry, content warnings, and image descriptions
 
-**Shipped version:** 20.01.2022~ynh1
+
+**Shipped version:** 2022.08.02~ynh1
 
 ## Screenshots
 
