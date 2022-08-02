@@ -14,7 +14,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 ynh_clean_setup () {
-	true
+	ynh_clean_check_starting
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
@@ -26,10 +26,11 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
 admin=$YNH_APP_ARG_ADMIN
-email=$(ynh_user_get_info $admin 'mail')
 password=$YNH_APP_ARG_PASSWORD
 
 app=$YNH_APP_INSTANCE_NAME
+
+email=$(ynh_user_get_info --username=$admin --key="mail")
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -61,7 +62,7 @@ ynh_app_setting_set --app=$app --key=admin --value=$admin
 ynh_script_progression --message="Finding an available port..." --weight=1
 
 # Find an available port
-port=$(ynh_find_port --port=7156)
+port=$(ynh_find_port --port=8095)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
 #=================================================
@@ -86,9 +87,8 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 ynh_app_setting_set --app=$app --key=public_path --value=$public_path
-
-# Clone repo, create public path and link accounts
-git clone https://gitlab.com/bashrc2/epicyon $final_path --quiet
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source --dest_dir="$final_path"
 
 mkdir $public_path
 mkdir -p $final_path/accounts/newsmirror
@@ -113,9 +113,9 @@ ynh_add_nginx_config
 #=================================================
 # SPECIFIC SETUP
 #=================================================
-# ...
+# CREATE ADMIN USER
 #=================================================
-ynh_script_progression --message="Create admin user" --weight=1
+ynh_script_progression --message="Creating admin user" --weight=1
 
 # Create admin
 python3 $final_path/epicyon.py --addaccount=$admin --password=$password --domain=$domain

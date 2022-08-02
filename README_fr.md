@@ -15,9 +15,10 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Serveur de réseau social fédéré
+Serveur ActivityPub mettant en œuvre les protocoles S2S et C2S, adapté aux ordinateurs monocartes. Comprend des fonctionnalités telles que des outils de modération, l'expiration des messages, des avertissements sur le contenu et des descriptions d'images.
 
-**Version incluse :** 20.01.2022~ynh1
+
+**Version incluse :** 2022.08.02~ynh1
 
 ## Captures d'écran
 
