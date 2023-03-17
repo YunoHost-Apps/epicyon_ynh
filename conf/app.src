@@ -1,5 +1,5 @@
-SOURCE_URL=https://gitlab.com/bashrc2/epicyon/-/archive/9d7856f9c0434b1587ae90ce19739ece6db6c206/epicyon-9d7856f9c0434b1587ae90ce19739ece6db6c206.tar.gz
-SOURCE_SUM=6171f537792b67fff24eaf495ea791dd7d153739990764d8be8d09722b03291c
+SOURCE_URL=https://gitlab.com/bashrc2/epicyon/-/archive/90a31c45ee2fc1c4c160f029c94be0911d14a8f5/epicyon-90a31c45ee2fc1c4c160f029c94be0911d14a8f5.tar.gz
+SOURCE_SUM=7807065c6d68073e6f8b4370297b22c659d5ea9e4a8609dbfb2332d0eb4e990d
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
