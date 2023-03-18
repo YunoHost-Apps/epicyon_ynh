@@ -5,29 +5,30 @@ It shall NOT be edited by hand.
 
 # Epicyon pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/epicyon.svg)](https://dash.yunohost.org/appci/app/epicyon) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/epicyon.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/epicyon.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/epicyon.svg)](https://dash.yunohost.org/appci/app/epicyon) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/epicyon.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/epicyon.maintain.svg)
+
 [![Installer Epicyon avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=epicyon)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Epicyon rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Epicyon rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Serveur ActivityPub mettant en œuvre les protocoles S2S et C2S, adapté aux ordinateurs monocartes. Comprend des fonctionnalités telles que des outils de modération, l'expiration des messages, des avertissements sur le contenu et des descriptions d'images.
 
 
-**Version incluse :** 2022.08.02~ynh1
+**Version incluse :** 2023.03.17~ynh1
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Epicyon](./doc/screenshots/screenshot_starlight.jpg)
+![Capture d’écran de Epicyon](./doc/screenshots/screenshot_starlight.jpg)
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://epicyon.net>
-* Dépôt de code officiel de l'app : <https://gitlab.com/bashrc2/epicyon/>
+* Site officiel de l’app : <https://epicyon.net>
+* Dépôt de code officiel de l’app : <https://gitlab.com/bashrc2/epicyon/>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_epicyon>
 * Signaler un bug : <https://github.com/YunoHost-Apps/epicyon_ynh/issues>
 
@@ -43,4 +44,4 @@ ou
 sudo yunohost app upgrade epicyon -u https://github.com/YunoHost-Apps/epicyon_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>

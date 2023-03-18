@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # Epicyon for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/epicyon.svg)](https://dash.yunohost.org/appci/app/epicyon) ![Working status](https://ci-apps.yunohost.org/ci/badges/epicyon.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/epicyon.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/epicyon.svg)](https://dash.yunohost.org/appci/app/epicyon) ![Working status](https://ci-apps.yunohost.org/ci/badges/epicyon.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/epicyon.maintain.svg)
+
 [![Install Epicyon with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=epicyon)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -18,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ActivityPub server implementing S2S and C2S protocols, suitable for single board computers. Includes features such as moderation tools, post expiry, content warnings, and image descriptions
 
 
-**Shipped version:** 2022.08.02~ynh1
+**Shipped version:** 2023.03.17~ynh1
 
 ## Screenshots
 
