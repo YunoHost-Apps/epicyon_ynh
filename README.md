@@ -29,7 +29,7 @@ ActivityPub server implementing S2S and C2S protocols, suitable for single board
 
 * Official app website: <https://epicyon.net>
 * Upstream app code repository: <https://gitlab.com/bashrc2/epicyon/>
-* YunoHost documentation for this app: <https://yunohost.org/app_epicyon>
+* YunoHost Store: <https://apps.yunohost.org/app/epicyon>
 * Report a bug: <https://github.com/YunoHost-Apps/epicyon_ynh/issues>
 
 ## Developer info

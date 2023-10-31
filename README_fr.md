@@ -29,7 +29,7 @@ Serveur ActivityPub mettant en œuvre les protocoles S2S et C2S, adapté aux ord
 
 * Site officiel de l’app : <https://epicyon.net>
 * Dépôt de code officiel de l’app : <https://gitlab.com/bashrc2/epicyon/>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_epicyon>
+* YunoHost Store: <https://apps.yunohost.org/app/epicyon>
 * Signaler un bug : <https://github.com/YunoHost-Apps/epicyon_ynh/issues>
 
 ## Informations pour les développeurs
