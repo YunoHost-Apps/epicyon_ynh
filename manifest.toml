@@ -7,7 +7,7 @@ name = "Epicyon"
 description.en = "Federated social network server"
 description.fr = "Serveur de réseau social fédéré"
 
-version = "2023.03.17~ynh1"
+version = "2023.03.17~ynh2"
 
 maintainers = []
 
