@@ -54,8 +54,6 @@ ynh_add_nginx_config
 ynh_add_systemd_config
 yunohost service add "$app" --description="Federated social network server" --log="/var/log/$app/$app.log"
 
-ynh_exec_warn find "$install_dir"
-
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
