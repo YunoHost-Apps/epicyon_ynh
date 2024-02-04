@@ -23,7 +23,8 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir/source"
 
-mkdir -p "$install_dir/accounts/newsmirror"
+mkdir -p "$install_dir/source/accounts/newsmirror"
+ln -s "$install_dir/source/accounts/newsmirror" "$install_dir/newsmirror"
 
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"

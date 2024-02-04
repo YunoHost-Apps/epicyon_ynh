@@ -24,7 +24,7 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app
 ynh_script_progression --message="Upgrading source files..." --weight=1
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir/source" --full_replace=1
+ynh_setup_source --dest_dir="$install_dir/source" --full_replace=1 --keep="accounts/newsmirror"
 
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
