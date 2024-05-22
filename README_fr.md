@@ -19,7 +19,7 @@ Il NE doit PAS être modifié à la main.
 Serveur ActivityPub mettant en œuvre les protocoles S2S et C2S, adapté aux ordinateurs monocartes. Comprend des fonctionnalités telles que des outils de modération, l'expiration des messages, des avertissements sur le contenu et des descriptions d'images.
 
 
-**Version incluse :** 2023.03.17~ynh2
+**Version incluse :** 2024.05.22~ynh1
 
 ## Captures d’écran
 

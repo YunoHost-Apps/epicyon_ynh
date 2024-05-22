@@ -19,7 +19,7 @@ NON debe editarse manualmente.
 ActivityPub server implementing S2S and C2S protocols, suitable for single board computers. Includes features such as moderation tools, post expiry, content warnings, and image descriptions
 
 
-**Versión proporcionada:** 2023.03.17~ynh2
+**Versión proporcionada:** 2024.05.22~ynh1
 
 ## Capturas de pantalla
 
