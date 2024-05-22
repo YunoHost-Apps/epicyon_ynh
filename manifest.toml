@@ -7,7 +7,7 @@ name = "Epicyon"
 description.en = "Federated social network server"
 description.fr = "Serveur de réseau social fédéré"
 
-version = "2023.03.17~ynh2"
+version = "2024.05.22~ynh1"
 
 maintainers = []
 
@@ -46,8 +46,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://gitlab.com/bashrc2/epicyon/-/archive/90a31c45ee2fc1c4c160f029c94be0911d14a8f5/epicyon-90a31c45ee2fc1c4c160f029c94be0911d14a8f5.tar.gz"
-    sha256 = "7807065c6d68073e6f8b4370297b22c659d5ea9e4a8609dbfb2332d0eb4e990d"
+    url = "https://gitlab.com/bashrc2/epicyon/-/archive/c504cd3ab76c62abcfac4f653451d363fe73c641/epicyon-c504cd3ab76c62abcfac4f653451d363fe73c641.tar.gz"
+    sha256 = "7f45e83eff0ecadc372823b550c0a7c63faa9a0342efe4dc96f9ca9242574c15"
 
     autoupdate.strategy = "latest_gitlab_tag"
 
