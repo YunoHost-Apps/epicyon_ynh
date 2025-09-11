@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -20,11 +19,6 @@ ynh_setup_source --dest_dir="$install_dir/source"
 mkdir -p "$install_dir/source/accounts/newsmirror"
 ln -s "$install_dir/source/accounts/newsmirror" "$install_dir/newsmirror"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
-#=================================================
-# SPECIFIC SETUP
 #=================================================
 # CREATE ADMIN USER
 #=================================================
