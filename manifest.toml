@@ -18,12 +18,12 @@ code = "https://gitlab.com/bashrc2/epicyon/"
 fund = "https://www.patreon.com/freedombone"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 12.1.17"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = "not_relevant"
-
 sso = "not_relevant"
 
 disk = "50M"
